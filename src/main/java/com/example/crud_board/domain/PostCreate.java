@@ -10,11 +10,11 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @ToString
 public class PostCreate {
-    @NotBlank
-    public String title;
+    @NotBlank(message = "타이틀을 입력해주세요.")
+    private String title;
 
-    @NotBlank
-    public String content;
+    @NotBlank(message = "메시지를 입력해주세요.")
+    private String content;
 
 //    public void setTitle(String title) {
 //        this.title = title;

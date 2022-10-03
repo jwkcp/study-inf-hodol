@@ -31,7 +31,7 @@ class PostControllerTest {
 //                        .param("content", "content1")
                 )
                 .andExpect(status().isOk())
-                .andExpect(content().string("hello, world"))
+                .andExpect(content().string("{}"))
                 .andDo(print());
     }
 
@@ -43,7 +43,8 @@ class PostControllerTest {
                                 .content("{\"title\": \"\", \"content\": \"content1\"}")
                 )
                 .andExpect(status().isOk())
-                .andExpect(content().string("hello, world"))
+//                .andExpect(content().string("hello, world"))
+                .andExpect(jsonPath("$.title").value("타이틀의 입력하세요."))
                 .andDo(print());
     }
 }
